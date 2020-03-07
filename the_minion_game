@@ -1,0 +1,21 @@
+def minion_game(s):
+    length=len(s)
+    x,y=0,0
+    for i in range(length):
+        if(s[i]=='A' or s[i]=='E' or s[i]=='I' or s[i]=="O" or s[i]=="U"):
+            x=x+(length-i)
+        else:
+            y=y+(length-i)
+    if(x>y):
+        print("Kevin",x)
+    if(y>x):
+        print("Stuart",y)
+    if(x==y):
+        print("Draw")
+
+    
+
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
