@@ -1,0 +1,11 @@
+from collections import Counter 
+
+s=input()
+x=''.join(sorted(s))
+#print(x)
+  
+coun =Counter(x) 
+  
+# This prints 3 most frequent characters 
+for  count in coun.most_common(3): 
+    print(* count)
