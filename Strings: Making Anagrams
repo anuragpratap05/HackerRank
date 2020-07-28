@@ -1,0 +1,50 @@
+# Python 3 implementation to find the 
+# uncommon characters of the two strings 
+
+# size of the hash table 
+MAX_CHAR = 26
+
+# function to find the uncommon characters 
+# of the two strings 
+def findAndPrintUncommonChars(str1, str2): 
+	
+	# mark presence of each character as 0 
+	# in the hash table 'present[]' 
+	present = [0] * MAX_CHAR 
+	for i in range(0, MAX_CHAR): 
+		present[i] = 0
+		
+	present2 = [0] * MAX_CHAR 
+	for i in range(0, MAX_CHAR): 
+		present2[i] = 0
+
+	l1 = len(str1) 
+	l2 = len(str2) 
+	
+	# for each character of str1, mark its 
+	# presence as 1 in 'present[]' 
+	for i in range(0, l1): 
+		present[ord(str1[i]) - ord('a')] = present[ord(str1[i]) - ord('a')]+1
+	#print(present)
+	# for each character of str2 
+	for i in range(0, l2): 
+	    present2[ord(str2[i]) - ord('a')] = present2[ord(str2[i]) - ord('a')]+1
+	#print(present2)
+	suma=0
+	for i in range(26):
+	    suma=suma+(abs(present[i]-present2[i]))
+	print(suma)
+	
+		
+
+
+
+# Driver Code 
+if __name__ == "__main__": 
+	str1 = input()
+	str2 = input()
+	findAndPrintUncommonChars(str1, str2) 
+
+# This code is contributed 
+# by Sairahul099 
+
