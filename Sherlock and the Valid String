@@ -1,0 +1,35 @@
+s=input()
+words={}
+for word in s:
+    words.setdefault(word,0)
+    words[word]+=1
+#print(words)
+ans="YES"
+value=list(words.values())
+if value.count(1)==1 and len(value)!=1:
+        value.remove(1)
+        x=value[0]
+        for i in range(1,len(value)):
+            dif=abs(x-value[i])
+            if dif>0:
+                ans="NO"
+            
+        
+        
+x=value[0]
+c=0
+
+for i in range(1,len(value)):
+    dif=abs(x-value[i])
+    if dif>1:
+        ans="NO"
+        break
+    if dif==1:
+        c=c+1
+    if c>1:
+        ans="NO"
+    
+
+print(ans)
+    
+        
