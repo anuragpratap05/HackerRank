@@ -1,0 +1,22 @@
+n=int(input())
+dicty={}
+res=[]
+for i in range(n):
+    ans="0"
+    a,b=map(int,input().split())
+    if a==1:
+        dicty[b] = dicty.get(b, 0) + 1
+        #print(dicty)
+    if a==2 and b in dicty:
+        dicty[b] = dicty.get(b, 0) -1
+        #print(dicty)
+    if a==3:
+        if b in dicty.values():
+            res.append(1)
+        else:
+            res.append(0)
+            
+for i in res:
+    
+    print(i)
+        
