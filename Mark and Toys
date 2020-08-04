@@ -1,0 +1,13 @@
+
+n,k=map(int,input().split())
+lst=list(map(int,input().split()))
+c=0
+suma=0
+lst=sorted(lst)
+for i in lst:
+    suma=suma+i
+    if suma<=k:
+        c=c+1
+    else:
+        break
+print(c)
